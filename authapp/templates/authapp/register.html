@@ -1,0 +1,21 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+<div class='bold-line'></div>
+<div class='container'>
+  <div class='window'>
+    <div class='overlay'></div>
+    <div class='content'>
+      <div class='welcome'>Регистрация</div>
+      <form class="input-fields" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+          <div class='spacing'>Уже зарегистрированы ? <span class='highlight'><a href="{% url 'authapp:login' %}">Войти</a></span></div>
+        <div><button class='ghost-round full-width'>Войти</button></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
